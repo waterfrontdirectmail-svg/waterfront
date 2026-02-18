@@ -14,13 +14,13 @@ const FinalCTA = () => (
       </h2>
       <div className="flex flex-wrap gap-4 justify-center mb-6">
         <a
-          href="#get-started"
+          href="/signup"
           className="bg-brass-gold hover:bg-brass-gold-hover text-primary-foreground px-7 py-3 rounded font-semibold text-sm transition-colors"
         >
           Start Your Campaign
         </a>
         <a
-          href="#get-started"
+          href="/explore"
           className="border-2 border-deep-navy-foreground text-deep-navy-foreground hover:bg-deep-navy-foreground hover:text-deep-navy px-7 py-3 rounded font-semibold text-sm transition-colors"
         >
           Get a Free Count

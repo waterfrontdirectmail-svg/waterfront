@@ -52,13 +52,13 @@ const HowItWorks = () => (
 
       <div className="flex flex-wrap gap-4 justify-center mt-14">
         <a
-          href="#get-started"
+          href="/signup"
           className="bg-brass-gold hover:bg-brass-gold-hover text-primary-foreground px-7 py-3 rounded font-semibold text-sm transition-colors"
         >
           Start Your Campaign
         </a>
         <a
-          href="#get-started"
+          href="/explore"
           className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-7 py-3 rounded font-semibold text-sm transition-colors"
         >
           Talk to Us

@@ -54,7 +54,7 @@ const WhatWeDo = () => (
 
       <div className="text-center mt-12">
         <a
-          href="#get-started"
+          href="/signup"
           className="inline-flex bg-brass-gold hover:bg-brass-gold-hover text-primary-foreground px-7 py-3 rounded font-semibold text-sm transition-colors"
         >
           Start Your Campaign
