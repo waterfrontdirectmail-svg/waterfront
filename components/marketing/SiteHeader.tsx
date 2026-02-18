@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Menu, X, Compass } from "lucide-react";
+import Link from "next/link";
 
 const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
@@ -17,12 +18,12 @@ const SiteHeader = () => {
     <header className="sticky top-0 z-50 bg-primary/[0.97] backdrop-blur-sm border-b border-primary-foreground/10">
       <div className="container-max px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-18">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 text-primary-foreground">
+        <Link href="/" className="flex items-center gap-2 text-primary-foreground">
           <Compass className="w-7 h-7 text-brass-gold" strokeWidth={1.5} />
           <span className="font-serif text-lg md:text-xl font-bold tracking-tight leading-tight">
             Waterfront<br className="hidden md:block" /> Direct Mail
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6">
