@@ -219,7 +219,7 @@ export default function SignupPage() {
           )}
         </CardContent>
 
-        <CardFooter className="flex flex-col gap-3">
+        <CardFooter className="flex flex-col gap-3 pt-6">
           <div className="flex w-full gap-3">
             {step > 0 && (
               <Button
