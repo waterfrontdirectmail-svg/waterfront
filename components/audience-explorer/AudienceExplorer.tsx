@@ -100,46 +100,51 @@ export function AudienceExplorer() {
   }, [mode, selectedCities, selectedZips]);
 
   return (
-    <Card className="w-full max-w-2xl mx-auto shadow-lg border-0">
-      <CardHeader className="text-center pb-4" style={{ backgroundColor: '#1B2A4A' }}>
-        <CardTitle className="text-white text-xl md:text-2xl font-bold leading-tight">
-          See How Many Waterfront Homeowners You Can Reach
-        </CardTitle>
-        <p className="text-slate-300 text-sm mt-1">
-          Real data from {selectedCounty} County
-        </p>
+    <Card className="w-full max-w-2xl mx-auto border border-slate-200/80 shadow-xl shadow-slate-200/50 rounded-2xl overflow-hidden">
+      <CardHeader className="relative pb-5 pt-6 px-6 md:px-8 text-center bg-gradient-to-br from-[#1B2A4A] via-[#1F3158] to-[#243A65]">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMC44IiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDQpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCBmaWxsPSJ1cmwoI2cpIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIi8+PC9zdmc+')] opacity-60" />
+        <div className="relative">
+          <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white/70 text-xs font-medium tracking-wide uppercase px-3 py-1 rounded-full mb-3">
+            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
+            Live Data
+          </div>
+          <CardTitle className="text-white text-xl md:text-2xl font-bold leading-tight tracking-tight">
+            Audience Explorer
+          </CardTitle>
+          <p className="text-slate-300/80 text-sm mt-1.5 font-normal">
+            See exactly how many waterfront homeowners you can reach in {selectedCounty} County
+          </p>
+        </div>
       </CardHeader>
 
       <CardContent className="p-4 md:p-6 space-y-4">
-        {/* County selector (expandable later) */}
+        {/* County selector */}
         <div className="flex items-center gap-2 text-sm">
-          <span className="text-slate-500 font-medium">County:</span>
-          <Button variant="outline" size="sm" className="font-semibold" disabled>
-            Palm Beach
-          </Button>
-          <span className="text-xs text-slate-400">More coming soon</span>
+          <span className="text-slate-400 text-xs font-medium uppercase tracking-wider">County</span>
+          <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5">
+            <span className="text-sm font-semibold text-slate-700">Palm Beach</span>
+          </div>
+          <span className="text-xs text-slate-400 italic">More coming soon</span>
         </div>
 
         {/* Mode toggle */}
-        <div className="flex rounded-lg border overflow-hidden">
+        <div className="flex rounded-xl bg-slate-100 p-1 gap-1">
           <button
-            className={`flex-1 py-2 px-4 text-sm font-medium transition-colors ${
+            className={`flex-1 py-2 px-4 text-sm font-medium rounded-lg transition-all duration-200 ${
               mode === 'city'
-                ? 'text-white'
-                : 'bg-white text-slate-600 hover:bg-slate-50'
+                ? 'bg-white text-slate-900 shadow-sm'
+                : 'text-slate-500 hover:text-slate-700'
             }`}
-            style={mode === 'city' ? { backgroundColor: '#1B2A4A' } : {}}
             onClick={() => setMode('city')}
           >
             Select by City
           </button>
           <button
-            className={`flex-1 py-2 px-4 text-sm font-medium transition-colors ${
+            className={`flex-1 py-2 px-4 text-sm font-medium rounded-lg transition-all duration-200 ${
               mode === 'zip'
-                ? 'text-white'
-                : 'bg-white text-slate-600 hover:bg-slate-50'
+                ? 'bg-white text-slate-900 shadow-sm'
+                : 'text-slate-500 hover:text-slate-700'
             }`}
-            style={mode === 'zip' ? { backgroundColor: '#1B2A4A' } : {}}
             onClick={() => setMode('zip')}
           >
             Select by Zip Code
