@@ -101,7 +101,8 @@ export default async function CampaignDetailPage({
       {campaign.status !== "cancelled" && (
         <Card className="mb-6">
           <CardContent className="py-6">
-            <div className="flex items-center justify-between">
+            {/* Desktop timeline */}
+            <div className="hidden sm:flex items-center justify-between">
               {statusSteps.map((step, i) => {
                 const done = i <= currentIdx;
                 const isCurrent = i === currentIdx;
@@ -123,7 +124,6 @@ export default async function CampaignDetailPage({
                     >
                       {step.label}
                     </p>
-                    {/* Connector line */}
                     {i < statusSteps.length - 1 && (
                       <div
                         className={`absolute top-4 left-[calc(50%+16px)] right-[calc(-50%+16px)] h-0.5 ${
@@ -131,6 +131,29 @@ export default async function CampaignDetailPage({
                         }`}
                       />
                     )}
+                  </div>
+                );
+              })}
+            </div>
+            {/* Mobile timeline - vertical */}
+            <div className="sm:hidden space-y-3">
+              {statusSteps.map((step, i) => {
+                const done = i <= currentIdx;
+                const isCurrent = i === currentIdx;
+                return (
+                  <div key={step.key} className="flex items-center gap-3">
+                    <div
+                      className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border-2 shrink-0 ${
+                        done
+                          ? "bg-[hsl(var(--deep-navy))] border-[hsl(var(--deep-navy))] text-white"
+                          : "bg-white border-gray-200 text-gray-400"
+                      } ${isCurrent ? "ring-2 ring-[hsl(var(--brass-gold))] ring-offset-1" : ""}`}
+                    >
+                      {i + 1}
+                    </div>
+                    <p className={`text-sm ${done ? "text-gray-900 font-medium" : "text-gray-400"}`}>
+                      {step.label}
+                    </p>
                   </div>
                 );
               })}

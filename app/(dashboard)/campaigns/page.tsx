@@ -41,10 +41,10 @@ export default async function CampaignsPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">My Campaigns</h1>
-        <Link href="/campaigns/new">
-          <Button className="bg-[hsl(var(--brass-gold))] text-[hsl(var(--deep-navy))] hover:opacity-90">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-900">My Campaigns</h1>
+        <Link href="/campaigns/new" className="shrink-0">
+          <Button className="w-full sm:w-auto bg-[hsl(var(--brass-gold))] text-[hsl(var(--deep-navy))] hover:opacity-90">
             <PlusCircle className="h-4 w-4 mr-2" />
             New Campaign
           </Button>

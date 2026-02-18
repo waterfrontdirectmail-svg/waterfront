@@ -74,17 +74,17 @@ export default async function DashboardPage() {
   return (
     <div>
       {/* Welcome */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
             Welcome back{profile?.full_name ? `, ${profile.full_name.split(" ")[0]}` : ""}
           </h1>
           <p className="text-sm text-gray-500 mt-1">
             Here&apos;s what&apos;s happening with your campaigns.
           </p>
         </div>
-        <Link href="/campaigns/new">
-          <Button className="bg-[hsl(var(--brass-gold))] text-[hsl(var(--deep-navy))] hover:opacity-90">
+        <Link href="/campaigns/new" className="shrink-0">
+          <Button className="w-full sm:w-auto bg-[hsl(var(--brass-gold))] text-[hsl(var(--deep-navy))] hover:opacity-90">
             <PlusCircle className="h-4 w-4 mr-2" />
             New Campaign
           </Button>
