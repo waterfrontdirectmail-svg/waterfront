@@ -41,13 +41,13 @@ const SiteHeader = () => {
         <div className="flex items-center gap-3">
           <a
             href="/login"
-            className="hidden sm:inline-flex text-primary-foreground/80 hover:text-brass-gold text-sm font-medium transition-colors"
+            className="hidden lg:inline-flex text-primary-foreground/80 hover:text-brass-gold text-sm font-medium transition-colors"
           >
             Log In
           </a>
           <a
             href="/signup"
-            className="hidden sm:inline-flex bg-brass-gold hover:bg-brass-gold-hover text-primary-foreground px-5 py-2.5 rounded text-sm font-semibold transition-colors"
+            className="hidden lg:inline-flex bg-brass-gold hover:bg-brass-gold-hover text-primary-foreground px-5 py-2.5 rounded text-sm font-semibold transition-colors whitespace-nowrap"
           >
             Get Started
           </a>
