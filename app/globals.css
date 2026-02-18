@@ -165,6 +165,40 @@
   background: hsl(var(--accent));
 }
 
+/* CTA Button Refinements - Mobile-First Premium Feel */
+.section-padding a[href="/signup"],
+.section-padding a[href="/explore"],
+.container-max a[href="/signup"],
+.container-max a[href="/explore"],
+a.cta-primary,
+a.cta-secondary {
+  padding: 16px 24px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.section-padding a[href="/signup"]:hover,
+.container-max a[href="/signup"]:hover,
+a.cta-primary:hover {
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15), 0 3px 6px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.section-padding a[href="/explore"]:hover,
+.container-max a[href="/explore"]:hover,
+a.cta-secondary:hover {
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.12), 0 3px 6px -3px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
 html {
   scroll-behavior: smooth;
 }
