@@ -63,7 +63,7 @@ export default function SignupPage() {
   }
 
   return (
-    <Card>
+    <Card className="auth-form">
       <CardHeader>
         <CardTitle className="text-center" style={{ color: "#0f1b3d" }}>
           Create Account

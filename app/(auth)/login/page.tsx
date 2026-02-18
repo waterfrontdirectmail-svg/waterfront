@@ -55,7 +55,7 @@ export default function LoginPage() {
   }
 
   return (
-    <Card>
+    <Card className="auth-form">
       <CardHeader>
         <CardTitle className="text-center" style={{ color: "#0f1b3d" }}>
           Sign In

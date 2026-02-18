@@ -199,6 +199,62 @@ a.cta-secondary:hover {
   transform: translateY(-1px);
 }
 
+/* Premium Auth Form Styles */
+/* Card container - floating elegant feel */
+[data-slot="card"] {
+  padding: 2rem 1.75rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+  border-color: hsl(var(--border) / 0.5);
+}
+
+/* Form group spacing */
+.auth-form .space-y-4 > * + * {
+  margin-top: 1.5rem !important;
+}
+
+/* Input field refinements */
+.auth-form [data-slot="input"] {
+  padding: 14px 16px;
+  height: auto;
+  border-radius: 10px;
+  border: 1.5px solid hsl(var(--border));
+  font-size: 0.9375rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.auth-form [data-slot="input"]:focus {
+  border: 2px solid hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.08);
+}
+.auth-form [data-slot="input"]::placeholder {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground) / 0.6);
+}
+
+/* Label refinements */
+.auth-form [data-slot="label"] {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: hsl(var(--charcoal));
+}
+
+/* Submit button - premium match */
+.auth-form button[type="submit"] {
+  padding: 16px 24px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  height: auto;
+  transition: all 0.2s ease;
+}
+.auth-form button[type="submit"]:hover:not(:disabled) {
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
 html {
   scroll-behavior: smooth;
 }

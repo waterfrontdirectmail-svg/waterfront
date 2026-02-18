@@ -52,7 +52,7 @@ export default function ForgotPasswordPage() {
 
   if (sent) {
     return (
-      <Card>
+      <Card className="auth-form">
         <CardHeader>
           <CardTitle className="text-center" style={{ color: "#0f1b3d" }}>
             Check Your Email
@@ -71,7 +71,7 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <Card>
+    <Card className="auth-form">
       <CardHeader>
         <CardTitle className="text-center" style={{ color: "#0f1b3d" }}>
           Reset Password

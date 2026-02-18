@@ -53,7 +53,7 @@ export default function ResetPasswordPage() {
   }
 
   return (
-    <Card>
+    <Card className="auth-form">
       <CardHeader>
         <CardTitle className="text-center" style={{ color: "#0f1b3d" }}>
           Set New Password
