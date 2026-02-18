@@ -32,7 +32,7 @@ export default async function AdminCampaignsPage({
 
   let query = sb
     .from("campaigns")
-    .select("*, profiles(name, email, company_name)")
+    .select("*, profiles(full_name, email, company_name)")
     .order("created_at", { ascending: false });
 
   if (params.status && params.status !== "all") {

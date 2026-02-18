@@ -17,7 +17,7 @@ export default async function AdminReportsPage() {
     { data: campaigns },
     { data: coverage },
   ] = await Promise.all([
-    sb.from("orders").select("amount, paid_at, user_id, profiles(name, company_name)").eq("status", "paid").order("paid_at", { ascending: false }),
+    sb.from("orders").select("amount, paid_at, user_id, profiles(full_name, company_name)").eq("status", "paid").order("paid_at", { ascending: false }),
     sb.from("campaigns").select("status"),
     sb.from("coverage_counts").select("county, city, homeowner_count"),
   ]);
@@ -39,7 +39,7 @@ export default async function AdminReportsPage() {
   // Top customers
   const customerRevenue: Record<string, { name: string; total: number }> = {};
   (paidOrders ?? []).forEach((o: any) => {
-    const name = o.profiles?.company_name || o.profiles?.name || "Unknown";
+    const name = o.profiles?.company_name || o.profiles?.full_name || "Unknown";
     if (!customerRevenue[o.user_id]) {
       customerRevenue[o.user_id] = { name, total: 0 };
     }

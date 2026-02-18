@@ -35,7 +35,7 @@ export default async function AdminCampaignDetailPage({
 
   const { data: campaign } = await sb
     .from("campaigns")
-    .select("*, profiles(name, email, company_name, phone)")
+    .select("*, profiles(full_name, email, company_name, phone)")
     .eq("id", id)
     .single();
 
@@ -197,7 +197,7 @@ export default async function AdminCampaignDetailPage({
               <CardTitle className="text-lg">Customer</CardTitle>
             </CardHeader>
             <CardContent className="text-sm space-y-1">
-              <p className="font-medium">{campaign.profiles?.name ?? "-"}</p>
+              <p className="font-medium">{campaign.profiles?.full_name ?? "-"}</p>
               <p className="text-gray-500">{campaign.profiles?.company_name}</p>
               <p className="text-gray-500">{campaign.profiles?.email}</p>
               <p className="text-gray-500">{campaign.profiles?.phone}</p>

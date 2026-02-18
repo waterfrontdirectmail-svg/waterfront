@@ -23,14 +23,14 @@ export default async function AdminFulfillmentPage({
 
   let query = sb
     .from("campaigns")
-    .select("*, profiles(name, company_name)")
+    .select("*, profiles(full_name, company_name)")
     .in("status", FULFILLMENT_STATUSES)
     .order("updated_at", { ascending: false });
 
   if (stage !== "all" && FULFILLMENT_STATUSES.includes(stage)) {
     query = sb
       .from("campaigns")
-      .select("*, profiles(name, company_name)")
+      .select("*, profiles(full_name, company_name)")
       .eq("status", stage)
       .order("updated_at", { ascending: false });
   }

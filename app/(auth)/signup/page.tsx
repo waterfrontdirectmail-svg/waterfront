@@ -50,7 +50,7 @@ export default function SignupPage() {
     setLoading(true);
 
     const supabase = createClient();
-    const { error: authError } = await supabase.auth.signUp({
+    const { data: authData, error: authError } = await supabase.auth.signUp({
       email: data.email,
       password: data.password,
       options: {
@@ -69,7 +69,12 @@ export default function SignupPage() {
       return;
     }
 
-    router.push("/verify");
+    // If session exists, email confirmation is disabled - go straight to dashboard
+    if (authData?.session) {
+      router.push("/dashboard");
+    } else {
+      router.push("/verify");
+    }
   }
 
   async function handleNext() {

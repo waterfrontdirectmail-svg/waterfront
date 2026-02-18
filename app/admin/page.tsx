@@ -52,7 +52,7 @@ export default async function AdminDashboardPage() {
       .eq("status", "pending_review"),
     sb
       .from("campaigns")
-      .select("id, name, status, updated_at, profiles(name, company_name)")
+      .select("id, name, status, updated_at, profiles(full_name, company_name)")
       .order("updated_at", { ascending: false })
       .limit(10),
   ]);

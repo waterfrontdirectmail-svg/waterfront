@@ -27,7 +27,7 @@ export default async function AdminUsersPage({
 
   if (params.q) {
     query = query.or(
-      `name.ilike.%${params.q}%,email.ilike.%${params.q}%,company_name.ilike.%${params.q}%`
+      `full_name.ilike.%${params.q}%,email.ilike.%${params.q}%,company_name.ilike.%${params.q}%`
     );
   }
 
@@ -59,7 +59,7 @@ export default async function AdminUsersPage({
                 <tbody>
                   {users.map((u: any) => (
                     <tr key={u.id} className="border-b border-gray-100 hover:bg-gray-50">
-                      <td className="p-3 font-medium text-gray-900">{u.name || "-"}</td>
+                      <td className="p-3 font-medium text-gray-900">{u.full_name || "-"}</td>
                       <td className="p-3 text-gray-600">{u.email}</td>
                       <td className="p-3 text-gray-600">{u.company_name || "-"}</td>
                       <td className="p-3">

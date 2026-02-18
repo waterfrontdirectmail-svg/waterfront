@@ -18,12 +18,12 @@ export default async function AdminExclusivityPage() {
 
   const { data: records } = await sb
     .from("exclusivity")
-    .select("*, profiles(name, email, company_name)")
+    .select("*, profiles(full_name, email, company_name)")
     .order("created_at", { ascending: false });
 
   const { data: users } = await sb
     .from("profiles")
-    .select("id, name, email, company_name")
+    .select("id, full_name, email, company_name")
     .order("name");
 
   return (
@@ -59,7 +59,7 @@ export default async function AdminExclusivityPage() {
                         return (
                           <tr key={r.id} className="border-b border-gray-100 hover:bg-gray-50">
                             <td className="p-3 font-medium">
-                              {r.profiles?.company_name || r.profiles?.name || r.profiles?.email || "-"}
+                              {r.profiles?.company_name || r.profiles?.full_name || r.profiles?.email || "-"}
                             </td>
                             <td className="p-3 text-gray-600 capitalize">
                               {r.industry_category?.replace(/_/g, " ")}

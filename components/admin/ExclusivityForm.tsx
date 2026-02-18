@@ -32,7 +32,7 @@ const INDUSTRIES = [
 export function ExclusivityForm({
   users,
 }: {
-  users: { id: string; name: string | null; email: string; company_name: string | null }[];
+  users: { id: string; full_name: string | null; email: string; company_name: string | null }[];
 }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -109,7 +109,7 @@ export function ExclusivityForm({
               <SelectContent>
                 {users.map((u) => (
                   <SelectItem key={u.id} value={u.id}>
-                    {u.company_name || u.name || u.email}
+                    {u.company_name || u.full_name || u.email}
                   </SelectItem>
                 ))}
               </SelectContent>
