@@ -1,3 +1,4 @@
+import UtilityBar from "@/components/marketing/UtilityBar";
 import SiteHeader from "@/components/marketing/SiteHeader";
 import SiteFooter from "@/components/marketing/SiteFooter";
 
@@ -8,6 +9,7 @@ export default function MarketingLayout({
 }) {
   return (
     <div className="min-h-screen">
+      <UtilityBar />
       <SiteHeader />
       {children}
       <SiteFooter />
