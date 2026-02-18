@@ -16,20 +16,11 @@ export function ExplorerCTAs({ selectionParams, disabled }: ExplorerCTAsProps) {
       <Button
         asChild
         size="lg"
-        className="flex-1 text-base font-semibold"
+        className="w-full text-base font-semibold"
         style={{ backgroundColor: '#C9A84C', color: '#1B2A4A' }}
         disabled={disabled}
       >
-        <a href={quoteUrl}>Get a Free Quote →</a>
-      </Button>
-      <Button
-        asChild
-        size="lg"
-        className="flex-1 text-base font-semibold text-white"
-        style={{ backgroundColor: '#1B2A4A' }}
-        disabled={disabled}
-      >
-        <a href={campaignUrl}>Start a Campaign →</a>
+        <a href={campaignUrl}>Start Your Campaign →</a>
       </Button>
     </div>
   );
