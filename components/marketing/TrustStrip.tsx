@@ -1,3 +1,4 @@
+"use client";
 import { Anchor, Package, MapPinned, BadgeCheck } from "lucide-react";
 import { motion } from "framer-motion";
 

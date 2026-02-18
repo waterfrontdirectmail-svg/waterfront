@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import coverageMap from "@/assets/coverage-map.jpg";
 import { MapPin } from "lucide-react";

@@ -1,3 +1,4 @@
+"use client";
 import { Database, Palette, Truck } from "lucide-react";
 import { motion } from "framer-motion";
 

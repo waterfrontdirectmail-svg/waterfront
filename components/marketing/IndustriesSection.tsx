@@ -1,3 +1,4 @@
+"use client";
 import { Anchor, Ship, Wrench, ArrowUpFromLine, Shield, Sparkles, Waves } from "lucide-react";
 import { motion } from "framer-motion";
 

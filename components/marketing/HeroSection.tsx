@@ -1,3 +1,4 @@
+"use client";
 import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-waterfront.jpg";
