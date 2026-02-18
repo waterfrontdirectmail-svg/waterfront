@@ -61,7 +61,7 @@ const HowItWorks = () => (
           href="/explore"
           className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-7 py-3 rounded font-semibold text-sm transition-colors"
         >
-          Talk to Us
+          Explore Coverage
         </a>
       </div>
     </div>
