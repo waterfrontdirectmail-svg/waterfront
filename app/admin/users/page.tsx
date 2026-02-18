@@ -30,6 +30,7 @@ export default async function AdminUsersPage({
   let query = sb
     .from("profiles")
     .select("*, campaigns(id)")
+    .eq("role", "admin")
     .order("created_at", { ascending: false });
 
   if (params.q) {
@@ -42,7 +43,7 @@ export default async function AdminUsersPage({
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Users</h1>
+      <h1 className="text-2xl font-bold text-gray-900 mb-6">Team</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">

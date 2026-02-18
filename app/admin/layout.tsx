@@ -7,6 +7,7 @@ import {
   LayoutDashboard,
   Megaphone,
   Users,
+  UserCheck,
   Truck,
   Shield,
   BarChart3,
@@ -15,11 +16,12 @@ import {
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
+  { href: "/admin/customers", label: "Customers", icon: UserCheck },
   { href: "/admin/campaigns", label: "Campaigns", icon: Megaphone },
-  { href: "/admin/users", label: "Users", icon: Users },
   { href: "/admin/fulfillment", label: "Fulfillment", icon: Truck },
   { href: "/admin/exclusivity", label: "Exclusivity", icon: Shield },
   { href: "/admin/reports", label: "Reports", icon: BarChart3 },
+  { href: "/admin/users", label: "Team", icon: Users },
 ];
 
 export default function AdminLayout({
