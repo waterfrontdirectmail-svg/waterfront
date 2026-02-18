@@ -129,7 +129,7 @@ export default function SignupPage() {
       </CardHeader>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <CardContent className="space-y-4 min-h-[180px]">
+        <CardContent className="space-y-4">
           {error && (
             <div className="bg-red-50 text-red-600 text-sm p-3 rounded-md">
               {error}
