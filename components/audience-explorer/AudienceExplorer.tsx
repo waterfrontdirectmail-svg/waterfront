@@ -29,7 +29,7 @@ export function AudienceExplorer() {
   const [selectedZips, setSelectedZips] = useState<string[]>(
     searchParams.get('zips')?.split(',').filter(Boolean) || []
   );
-  const [selectedCounty] = useState('Palm Beach');
+  const [selectedCounty, setSelectedCounty] = useState(searchParams.get('county') || 'Palm Beach');
 
   // Fetch coverage data
   useEffect(() => {
@@ -42,10 +42,19 @@ export function AudienceExplorer() {
       .catch(() => setLoading(false));
   }, []);
 
+  const counties = useMemo(() => data?.counties.map(c => c.name).sort() || [], [data]);
+
+  const switchCounty = useCallback((county: string) => {
+    setSelectedCounty(county);
+    setSelectedCities([]);
+    setSelectedZips([]);
+  }, []);
+
   // Update URL params (debounced)
   useEffect(() => {
     const timeout = setTimeout(() => {
       const params = new URLSearchParams();
+      if (selectedCounty !== 'Palm Beach') params.set('county', selectedCounty);
       if (mode === 'city' && selectedCities.length > 0) {
         params.set('cities', selectedCities.join(','));
       } else if (mode === 'zip' && selectedZips.length > 0) {
@@ -55,7 +64,7 @@ export function AudienceExplorer() {
       router.replace(qs ? `?${qs}` : '?', { scroll: false });
     }, 300);
     return () => clearTimeout(timeout);
-  }, [mode, selectedCities, selectedZips, router]);
+  }, [mode, selectedCities, selectedZips, selectedCounty, router]);
 
   const toggleCity = useCallback((city: string) => {
     setSelectedCities((prev) =>
@@ -112,7 +121,7 @@ export function AudienceExplorer() {
             Audience Explorer
           </CardTitle>
           <p className="text-slate-300/80 text-sm mt-1.5 font-normal">
-            See exactly how many waterfront homeowners you can reach in {selectedCounty} County
+            See exactly how many waterfront homeowners you can reach in South Florida
           </p>
         </div>
       </CardHeader>
@@ -121,10 +130,21 @@ export function AudienceExplorer() {
         {/* County selector */}
         <div className="flex items-center gap-2 text-sm">
           <span className="text-slate-400 text-xs font-medium uppercase tracking-wider">County</span>
-          <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5">
-            <span className="text-sm font-semibold text-slate-700">Palm Beach</span>
+          <div className="flex items-center gap-1 bg-slate-50 border border-slate-200 rounded-lg p-1">
+            {counties.map(county => (
+              <button
+                key={county}
+                onClick={() => switchCounty(county)}
+                className={`px-3 py-1.5 text-sm font-semibold rounded-md transition-all duration-200 ${
+                  selectedCounty === county
+                    ? 'bg-[#1B2A4A] text-white shadow-sm'
+                    : 'text-slate-500 hover:text-slate-700 hover:bg-white'
+                }`}
+              >
+                {county}
+              </button>
+            ))}
           </div>
-          <span className="text-xs text-slate-400 italic">More coming soon</span>
         </div>
 
         {/* Mode toggle */}

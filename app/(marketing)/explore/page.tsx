@@ -4,7 +4,7 @@ import { AudienceExplorer } from '@/components/audience-explorer/AudienceExplore
 export const metadata = {
   title: 'Explore Waterfront Coverage | Waterfront Direct Mail',
   description:
-    'See how many waterfront homeowners you can reach with direct mail in Palm Beach County.',
+    'See how many waterfront homeowners you can reach with direct mail in Palm Beach & Broward counties.',
 };
 
 export default function ExplorePage() {
