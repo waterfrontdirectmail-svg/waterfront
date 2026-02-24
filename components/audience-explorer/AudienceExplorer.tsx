@@ -46,8 +46,6 @@ export function AudienceExplorer() {
 
   const switchCounty = useCallback((county: string) => {
     setSelectedCounty(county);
-    setSelectedCities([]);
-    setSelectedZips([]);
   }, []);
 
   // Update URL params (debounced)
@@ -89,17 +87,19 @@ export function AudienceExplorer() {
     return { cities, zips };
   }, [data, selectedCounty]);
 
-  // Calculate total
+  // Calculate total across ALL counties (not just the visible one)
   const total = useMemo(() => {
+    if (!data) return 0;
     if (mode === 'city') {
-      return countyData.cities
+      return data.counties
+        .flatMap((c) => c.cities)
         .filter((c) => selectedCities.includes(c.name))
         .reduce((sum, c) => sum + c.count, 0);
     }
-    return countyData.zips
+    return data.zips
       .filter((z) => selectedZips.includes(z.zip_code))
       .reduce((sum, z) => sum + z.count, 0);
-  }, [mode, selectedCities, selectedZips, countyData]);
+  }, [mode, selectedCities, selectedZips, data]);
 
   // Build selection params for CTAs
   const selectionParams = useMemo(() => {
