@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import coverageMap from "@/assets/coverage-map.jpg";
-import { MapPin, ArrowRight } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 const palmBeach = [
   "Palm Beach Gardens", "Jupiter", "West Palm Beach", "Lake Worth",
@@ -16,7 +16,7 @@ const broward = [
 const CoverageSection = () => (
   <section id="coverage" className="section-padding bg-secondary">
     <div className="container-max">
-      <div className="text-center max-w-2xl mx-auto mb-16">
+      <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <p className="text-xs font-semibold tracking-widest uppercase text-brass-gold mb-3">Coverage</p>
         <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           Hyper-Local Coverage Across South Florida&apos;s Waterways.
@@ -26,9 +26,9 @@ const CoverageSection = () => (
         </p>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+      <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16">
         <motion.div
-          className="flex-1 max-w-md lg:max-w-lg"
+          className="w-full lg:flex-1 lg:max-w-lg"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -41,14 +41,13 @@ const CoverageSection = () => (
         </motion.div>
 
         <motion.div
-          className="flex-1"
+          className="w-full lg:flex-1"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          {/* Palm Beach */}
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-4">
               <h3 className="font-serif text-lg font-bold">Palm Beach County</h3>
               <span className="text-brass-gold font-bold text-sm">7,100+ addresses</span>
             </div>
@@ -62,9 +61,8 @@ const CoverageSection = () => (
             </div>
           </div>
 
-          {/* Broward */}
           <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-4">
               <h3 className="font-serif text-lg font-bold">Broward County</h3>
               <span className="text-brass-gold font-bold text-sm">12,500+ addresses</span>
             </div>
@@ -78,15 +76,7 @@ const CoverageSection = () => (
             </div>
           </div>
 
-          <a
-            href="/explore"
-            className="group inline-flex items-center gap-2 text-brass-gold font-semibold text-sm hover:underline"
-          >
-            Explore all addresses in our database
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
-
-          <p className="text-muted-foreground text-sm mt-4 italic">
+          <p className="text-muted-foreground text-sm italic">
             Need coverage outside these areas? Contact us. We are expanding.
           </p>
         </motion.div>

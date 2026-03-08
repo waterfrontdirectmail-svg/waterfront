@@ -5,7 +5,6 @@ import heroImage from "@/assets/hero-waterfront.jpg";
 
 const HeroSection = () => (
   <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-    {/* Background image with overlay */}
     <div className="absolute inset-0">
       <img
         src={heroImage.src}
@@ -17,12 +16,11 @@ const HeroSection = () => (
 
     <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
       <div className="max-w-2xl">
-        {/* Tag */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 bg-white/[0.08] backdrop-blur-sm border border-white/[0.12] rounded-full px-4 py-1.5 mb-8"
+          className="inline-flex items-center gap-2 bg-white/[0.08] backdrop-blur-sm border border-white/[0.12] rounded-full px-4 py-1.5 mb-6 sm:mb-8"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-brass-gold animate-pulse" />
           <span className="text-xs font-semibold tracking-widest uppercase text-white/80">
@@ -30,33 +28,30 @@ const HeroSection = () => (
           </span>
         </motion.div>
 
-        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-serif text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.08] tracking-tight text-white mb-6"
+          className="font-serif text-3xl sm:text-4xl lg:text-[3.5rem] font-bold leading-[1.08] tracking-tight text-white mb-5 sm:mb-6"
         >
           Every Mailer Hits a Home
           <span className="text-brass-gold"> on the Water.</span>
         </motion.h1>
 
-        {/* Subhead */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg sm:text-xl text-white/75 leading-relaxed mb-8 max-w-lg"
+          className="text-base sm:text-lg lg:text-xl text-white/75 leading-relaxed mb-6 sm:mb-8 max-w-lg"
         >
           Targeted direct mail to verified navigable waterfront homeowners in Palm Beach &amp; Broward County. No inland. No lakes. No waste.
         </motion.p>
 
-        {/* Badges */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap gap-3 mb-10"
+          className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 mb-8 sm:mb-10"
         >
           {["Verified dock & boat access", "Navigable water only", "Full-service campaigns"].map((b) => (
             <span
@@ -69,36 +64,22 @@ const HeroSection = () => (
           ))}
         </motion.div>
 
-        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap gap-4"
         >
           <a
-            href="/signup"
+            href="#get-started"
             className="group bg-brass-gold hover:bg-brass-gold-hover text-primary-foreground px-7 py-3.5 rounded-lg font-semibold text-sm transition-all inline-flex items-center gap-2"
           >
-            Start Your Campaign
+            Get a Free Campaign Plan
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </a>
-          <a
-            href="/explore"
-            className="border border-white/25 text-white hover:bg-white/10 px-7 py-3.5 rounded-lg font-semibold text-sm transition-all"
-          >
-            Explore Coverage
-          </a>
+          <p className="text-white/40 text-sm mt-4">
+            No contracts. Campaigns launch in two weeks.
+          </p>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-white/40 text-sm mt-6"
-        >
-          No contracts. Campaigns launch in two weeks.
-        </motion.p>
       </div>
     </div>
   </section>

@@ -26,7 +26,7 @@ const services = [
 const WhatWeDo = () => (
   <section id="what-we-do" className="section-padding bg-secondary">
     <div className="container-max">
-      <div className="text-center max-w-2xl mx-auto mb-16">
+      <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <p className="text-xs font-semibold tracking-widest uppercase text-brass-gold mb-3">What We Do</p>
         <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           A Complete Direct Mail Service Built for the Marine Industry.
@@ -36,17 +36,17 @@ const WhatWeDo = () => (
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         {services.map((s, i) => (
           <motion.div
             key={s.title}
-            className="group bg-card border border-border rounded-xl p-8 hover:shadow-lg hover:border-brass-gold/30 transition-all duration-300"
+            className="group bg-card border border-border rounded-xl p-6 sm:p-8 hover:shadow-lg hover:border-brass-gold/30 transition-all duration-300"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
           >
-            <div className="w-12 h-12 rounded-lg bg-deep-navy flex items-center justify-center mb-6">
+            <div className="w-12 h-12 rounded-lg bg-deep-navy flex items-center justify-center mb-5">
               <s.icon className="w-6 h-6 text-brass-gold" strokeWidth={1.5} />
             </div>
             <h3 className="font-serif text-xl font-bold mb-3">{s.title}</h3>

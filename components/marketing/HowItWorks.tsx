@@ -28,14 +28,14 @@ const steps = [
 const HowItWorks = () => (
   <section id="how-it-works" className="section-padding bg-deep-navy">
     <div className="container-max">
-      <div className="text-center max-w-2xl mx-auto mb-16">
+      <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <p className="text-xs font-semibold tracking-widest uppercase text-brass-gold mb-3">How It Works</p>
         <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
           From Strategy to Mailbox in Four Simple Steps.
         </h2>
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 lg:gap-8">
         {steps.map((s, i) => (
           <motion.div
             key={s.num}
@@ -53,27 +53,6 @@ const HowItWorks = () => (
           </motion.div>
         ))}
       </div>
-
-      <motion.div
-        className="flex flex-wrap gap-4 justify-center mt-16"
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <a
-          href="/signup"
-          className="group bg-brass-gold hover:bg-brass-gold-hover text-primary-foreground px-7 py-3.5 rounded-lg font-semibold text-sm transition-all inline-flex items-center gap-2"
-        >
-          Start Your Campaign
-          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-        </a>
-        <a
-          href="/explore"
-          className="border border-white/20 text-white hover:bg-white/10 px-7 py-3.5 rounded-lg font-semibold text-sm transition-all"
-        >
-          Explore Coverage
-        </a>
-      </motion.div>
     </div>
   </section>
 );

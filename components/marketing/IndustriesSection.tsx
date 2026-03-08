@@ -15,18 +15,18 @@ const industries = [
 const IndustriesSection = () => (
   <section id="industries" className="section-padding bg-background">
     <div className="container-max">
-      <div className="text-center max-w-2xl mx-auto mb-16">
+      <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <p className="text-xs font-semibold tracking-widest uppercase text-brass-gold mb-3">Industries</p>
         <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           Built for Businesses That Serve Waterfront Homeowners.
         </h2>
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
         {industries.map((ind, i) => (
           <motion.div
             key={ind.title}
-            className="group bg-card border border-border rounded-xl p-6 hover:shadow-md hover:border-brass-gold/30 transition-all duration-300"
+            className="group bg-card border border-border rounded-xl p-5 sm:p-6 hover:shadow-md hover:border-brass-gold/30 transition-all duration-300"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

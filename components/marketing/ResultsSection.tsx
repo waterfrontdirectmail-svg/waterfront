@@ -19,18 +19,18 @@ const testimonials = [
 const ResultsSection = () => (
   <section id="results" className="section-padding bg-background">
     <div className="container-max">
-      <div className="text-center max-w-2xl mx-auto mb-16">
+      <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <p className="text-xs font-semibold tracking-widest uppercase text-brass-gold mb-3">Results</p>
         <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           Our Clients See Real Results.
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
         {testimonials.map((t, i) => (
           <motion.div
             key={i}
-            className="relative bg-secondary border border-border rounded-xl p-8"
+            className="relative bg-secondary border border-border rounded-xl p-6 sm:p-8"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -39,7 +39,7 @@ const ResultsSection = () => (
             <div className="text-5xl font-serif text-brass-gold/20 leading-none mb-4">&ldquo;</div>
             <p className="text-foreground leading-relaxed mb-6 text-[15px]">{t.quote}</p>
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-deep-navy flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-deep-navy flex items-center justify-center flex-shrink-0">
                 <span className="text-brass-gold text-xs font-bold">{t.author.charAt(0)}</span>
               </div>
               <p className="text-sm font-semibold text-muted-foreground">{t.author}</p>

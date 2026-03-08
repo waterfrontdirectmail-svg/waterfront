@@ -16,26 +16,25 @@ const ProblemSolution = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-14"
+        className="text-center mb-10 sm:mb-14"
       >
         <p className="text-xs font-semibold tracking-widest uppercase text-brass-gold mb-3">The Problem</p>
         <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           Most Waterfront Lists Waste Your Money.
         </h2>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
           Generic mailing lists include lakefront homes, retention ponds, and neighborhoods where no one owns a boat. Our data only includes homes on navigable waterways with real boat access.
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-        {/* Generic list - the bad */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
         <motion.div
           initial={{ opacity: 0, x: -16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-red-50/50 border border-red-200/60 rounded-xl p-8"
+          className="bg-red-50/50 border border-red-200/60 rounded-xl p-6 sm:p-8"
         >
-          <p className="text-sm font-bold text-red-400 uppercase tracking-wider mb-6">Generic Waterfront Lists</p>
+          <p className="text-sm font-bold text-red-400 uppercase tracking-wider mb-5 sm:mb-6">Generic Waterfront Lists</p>
           <ul className="space-y-4">
             {comparisons.map((c, i) => (
               <li key={i} className="flex items-start gap-3">
@@ -46,14 +45,13 @@ const ProblemSolution = () => (
           </ul>
         </motion.div>
 
-        {/* Our list - the good */}
         <motion.div
           initial={{ opacity: 0, x: 16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-[hsl(187,77%,27%,0.06)] border border-harbor-teal/20 rounded-xl p-8"
+          className="bg-[hsl(187,77%,27%,0.06)] border border-harbor-teal/20 rounded-xl p-6 sm:p-8"
         >
-          <p className="text-sm font-bold text-harbor-teal uppercase tracking-wider mb-6">Waterfront Direct Mail</p>
+          <p className="text-sm font-bold text-harbor-teal uppercase tracking-wider mb-5 sm:mb-6">Waterfront Direct Mail</p>
           <ul className="space-y-4">
             {comparisons.map((c, i) => (
               <li key={i} className="flex items-start gap-3">
