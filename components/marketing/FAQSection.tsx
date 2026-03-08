@@ -25,8 +25,8 @@ const faqs = [
     a: "No. We offer design as an add-on service. Our team can create postcards, letters, and other mailer formats for you. If you already have a design, just send it over.",
   },
   {
-    q: "What formats do you mail (postcards, letters, etc.)?",
-    a: "We primarily work with postcards and letter-size mailers, but we can accommodate other formats depending on your campaign goals.",
+    q: "What formats do you mail?",
+    a: "We offer three main formats: 6x9 standard postcards, 6x11 oversized postcards, and 6x9 cards inside a handwritten envelope for a premium touch. Custom formats are available on request.",
   },
   {
     q: "How do I know which homes received my mailer?",
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     q: "What if I want to do multiple campaigns?",
-    a: "Many of our clients run recurring campaigns. We can set up a schedule that works for your business, whether that's monthly, quarterly, or seasonal drops.",
+    a: "Many of our clients run recurring campaigns. We can set up a schedule that works for your business, whether monthly, quarterly, or seasonal drops.",
   },
 ];
 
@@ -46,12 +46,13 @@ const FAQSection = () => (
   <section id="faq" className="section-padding bg-secondary">
     <div className="container-max max-w-3xl">
       <motion.div
-        className="text-center mb-12"
+        className="text-center mb-14"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h2 className="font-serif text-2xl sm:text-3xl font-bold">
+        <p className="text-xs font-semibold tracking-widest uppercase text-brass-gold mb-3">FAQ</p>
+        <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold">
           Frequently Asked Questions
         </h2>
       </motion.div>
@@ -61,7 +62,7 @@ const FAQSection = () => (
           <AccordionItem
             key={i}
             value={`faq-${i}`}
-            className="bg-card border border-border rounded-lg px-6 overflow-hidden"
+            className="bg-card border border-border rounded-xl px-6 overflow-hidden"
           >
             <AccordionTrigger className="text-left font-serif text-sm font-bold py-5 hover:no-underline hover:text-brass-gold">
               {faq.q}

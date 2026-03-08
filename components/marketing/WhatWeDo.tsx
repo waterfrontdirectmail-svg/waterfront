@@ -7,13 +7,13 @@ const services = [
     icon: Database,
     title: "Targeted Data",
     description:
-      "We build your mailing list from our proprietary database of waterfront homeowners on navigable waterways. Filter by county, city, ZIP, or neighborhood. Every address is verified, deduped, and delivery-ready.",
+      "We build your mailing list from our proprietary database of waterfront homeowners on navigable waterways. Filter by county, city, ZIP, or neighborhood. Every address is verified and delivery-ready.",
   },
   {
     icon: Palette,
     title: "Design + Print",
     description:
-      "Need a mailer designed? Our creative team builds eye-catching postcards and letters that get opened. Already have your own design? Just send it over and we handle the rest. Design is available as an add-on service.",
+      "Need a mailer designed? Our creative team builds eye-catching postcards and letters that get opened. Already have your own design? Just send it over and we handle the rest.",
   },
   {
     icon: Truck,
@@ -24,10 +24,11 @@ const services = [
 ];
 
 const WhatWeDo = () => (
-  <section id="what-we-do" className="section-padding bg-background">
+  <section id="what-we-do" className="section-padding bg-secondary">
     <div className="container-max">
-      <div className="text-center max-w-2xl mx-auto mb-14">
-        <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-4">
+      <div className="text-center max-w-2xl mx-auto mb-16">
+        <p className="text-xs font-semibold tracking-widest uppercase text-brass-gold mb-3">What We Do</p>
+        <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           A Complete Direct Mail Service Built for the Marine Industry.
         </h2>
         <p className="text-muted-foreground text-lg">
@@ -35,30 +36,23 @@ const WhatWeDo = () => (
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
         {services.map((s, i) => (
           <motion.div
             key={s.title}
-            className="bg-card border border-border rounded-lg p-8 hover:shadow-lg transition-shadow"
+            className="group bg-card border border-border rounded-xl p-8 hover:shadow-lg hover:border-brass-gold/30 transition-all duration-300"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
           >
-            <s.icon className="w-10 h-10 text-brass-gold mb-5" strokeWidth={1.5} />
+            <div className="w-12 h-12 rounded-lg bg-deep-navy flex items-center justify-center mb-6">
+              <s.icon className="w-6 h-6 text-brass-gold" strokeWidth={1.5} />
+            </div>
             <h3 className="font-serif text-xl font-bold mb-3">{s.title}</h3>
             <p className="text-muted-foreground leading-relaxed text-sm">{s.description}</p>
           </motion.div>
         ))}
-      </div>
-
-      <div className="text-center mt-12">
-        <a
-          href="/signup"
-          className="inline-flex bg-brass-gold hover:bg-brass-gold-hover text-primary-foreground px-7 py-3 rounded font-semibold text-sm transition-colors"
-        >
-          Start Your Campaign
-        </a>
       </div>
     </div>
   </section>

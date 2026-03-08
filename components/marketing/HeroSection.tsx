@@ -1,81 +1,105 @@
 "use client";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-waterfront.jpg";
 
-const bullets = [
-  "Reach homeowners on canals, Intracoastal, and ocean-access waterways only",
-  "We handle the data, design, printing, and delivery",
-  "No wasted mail on landlocked or non-boat-access homes",
-  "Hyper-local targeting by city, ZIP, or neighborhood",
-];
-
 const HeroSection = () => (
-  <section className="bg-background section-padding">
-    <div className="container-max flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-      {/* Left */}
-      <motion.div
-        className="flex-1 max-w-2xl"
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-balance mb-6">
-          Put Your Business in Front of Every Waterfront Homeowner That Matters.
-        </h1>
-        <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-          We handle your entire direct mail campaign, from targeting the right homes on South Florida&apos;s navigable waterways to designing, printing, and delivering your mailer.
-        </p>
+  <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+    {/* Background image with overlay */}
+    <div className="absolute inset-0">
+      <img
+        src={heroImage.src}
+        alt="Aerial view of South Florida canal neighborhood with boats docked at waterfront homes"
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(213,75%,6%)] via-[hsl(213,75%,8%,0.92)] to-[hsl(213,75%,10%,0.7)]" />
+    </div>
 
-        <ul className="space-y-3 mb-8">
-          {bullets.map((b) => (
-            <li key={b} className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-harbor-teal mt-0.5 flex-shrink-0" />
-              <span className="text-foreground">{b}</span>
-            </li>
+    <div className="relative z-10 container-max px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div className="max-w-2xl">
+        {/* Tag */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 bg-white/[0.08] backdrop-blur-sm border border-white/[0.12] rounded-full px-4 py-1.5 mb-8"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-brass-gold animate-pulse" />
+          <span className="text-xs font-semibold tracking-widest uppercase text-white/80">
+            South Florida&apos;s Waterfront Data Experts
+          </span>
+        </motion.div>
+
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="font-serif text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.08] tracking-tight text-white mb-6"
+        >
+          Every Mailer Hits a Home
+          <span className="text-brass-gold"> on the Water.</span>
+        </motion.h1>
+
+        {/* Subhead */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-lg sm:text-xl text-white/75 leading-relaxed mb-8 max-w-lg"
+        >
+          Targeted direct mail to verified navigable waterfront homeowners in Palm Beach &amp; Broward County. No inland. No lakes. No waste.
+        </motion.p>
+
+        {/* Badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap gap-3 mb-10"
+        >
+          {["Verified dock & boat access", "Navigable water only", "Full-service campaigns"].map((b) => (
+            <span
+              key={b}
+              className="inline-flex items-center gap-2 text-sm text-white/90 bg-white/[0.06] border border-white/[0.1] rounded-lg px-3.5 py-2"
+            >
+              <CheckCircle2 className="w-4 h-4 text-brass-gold flex-shrink-0" />
+              {b}
+            </span>
           ))}
-        </ul>
+        </motion.div>
 
-        <div className="flex flex-wrap gap-4 mb-6">
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-wrap gap-4"
+        >
           <a
             href="/signup"
-            className="bg-brass-gold hover:bg-brass-gold-hover text-primary-foreground px-7 py-3 rounded font-semibold text-sm transition-colors"
+            className="group bg-brass-gold hover:bg-brass-gold-hover text-primary-foreground px-7 py-3.5 rounded-lg font-semibold text-sm transition-all inline-flex items-center gap-2"
           >
             Start Your Campaign
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </a>
           <a
             href="/explore"
-            className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-7 py-3 rounded font-semibold text-sm transition-colors"
+            className="border border-white/25 text-white hover:bg-white/10 px-7 py-3.5 rounded-lg font-semibold text-sm transition-all"
           >
             Explore Coverage
           </a>
-        </div>
+        </motion.div>
 
-        <p className="text-muted-foreground text-sm">
-          No long-term contracts. Campaigns start in as little as two weeks.
-        </p>
-      </motion.div>
-
-      {/* Right */}
-      <motion.div
-        className="flex-1 relative w-full max-w-xl lg:max-w-none"
-        initial={{ opacity: 0, x: 24 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <img
-          src={heroImage.src}
-          alt="Aerial view of South Florida canal neighborhood with boats docked at waterfront homes"
-          className="w-full rounded-lg shadow-xl object-cover aspect-[4/3]"
-        />
-        {/* Floating stat card */}
-        <div className="absolute -bottom-6 -left-4 sm:left-4 bg-primary text-primary-foreground p-5 rounded-lg shadow-lg max-w-xs">
-          <p className="text-2xl font-serif font-bold text-brass-gold">10,000+</p>
-          <p className="text-sm font-medium mt-1">Waterfront homes in our database</p>
-          <div className="brass-rule my-3 opacity-30" />
-          <p className="text-xs text-primary-foreground/70">Palm Beach &amp; Broward counties&ensp;·&ensp;Navigable waterways only</p>
-        </div>
-      </motion.div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-white/40 text-sm mt-6"
+        >
+          No contracts. Campaigns launch in two weeks.
+        </motion.p>
+      </div>
     </div>
   </section>
 );
