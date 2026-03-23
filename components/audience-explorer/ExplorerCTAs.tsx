@@ -8,8 +8,7 @@ interface ExplorerCTAsProps {
 }
 
 export function ExplorerCTAs({ selectionParams, disabled }: ExplorerCTAsProps) {
-  const quoteUrl = `/contact?${selectionParams}`;
-  const campaignUrl = `/signup?${selectionParams}`;
+  const formUrl = `/#get-started?${selectionParams}`;
 
   return (
     <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -20,7 +19,7 @@ export function ExplorerCTAs({ selectionParams, disabled }: ExplorerCTAsProps) {
         style={{ backgroundColor: '#C9A84C', color: '#1B2A4A' }}
         disabled={disabled}
       >
-        <a href={campaignUrl}>Start Your Campaign →</a>
+        <a href={formUrl}>Start Your Campaign →</a>
       </Button>
     </div>
   );

@@ -44,12 +44,6 @@ const SiteHeader = () => {
 
         <div className="flex items-center gap-3">
           <a
-            href="/login"
-            className="hidden lg:inline-flex text-primary-foreground/80 hover:text-brass-gold text-sm font-medium transition-colors"
-          >
-            Log In
-          </a>
-          <a
             href="#get-started"
             className="hidden lg:inline-flex bg-brass-gold hover:bg-brass-gold-hover text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap"
           >
@@ -78,13 +72,6 @@ const SiteHeader = () => {
                 {link.label}
               </a>
             ))}
-            <a
-              href="/login"
-              onClick={() => setMobileOpen(false)}
-              className="text-primary-foreground/80 hover:text-brass-gold py-3 text-sm font-medium transition-colors border-b border-primary-foreground/[0.06]"
-            >
-              Log In
-            </a>
             <a
               href="/explore"
               onClick={() => setMobileOpen(false)}
