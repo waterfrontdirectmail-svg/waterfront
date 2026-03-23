@@ -4,6 +4,7 @@ import WhatWeDo from "@/components/marketing/WhatWeDo";
 import HowItWorks from "@/components/marketing/HowItWorks";
 import IndustriesSection from "@/components/marketing/IndustriesSection";
 import CoverageSection from "@/components/marketing/CoverageSection";
+import PricingSection from "@/components/marketing/PricingSection";
 import ResultsSection from "@/components/marketing/ResultsSection";
 import TrustStrip from "@/components/marketing/TrustStrip";
 import FAQSection from "@/components/marketing/FAQSection";
@@ -20,6 +21,7 @@ export default function HomePage() {
       <HowItWorks />
       <IndustriesSection />
       <CoverageSection />
+      <PricingSection />
       <ResultsSection />
       <FAQSection />
       <LeadCapture />
