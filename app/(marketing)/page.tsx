@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import HeroSection from "@/components/marketing/HeroSection";
 import ProblemSolution from "@/components/marketing/ProblemSolution";
 import WhatWeDo from "@/components/marketing/WhatWeDo";
@@ -10,10 +11,14 @@ import TrustStrip from "@/components/marketing/TrustStrip";
 import FAQSection from "@/components/marketing/FAQSection";
 import LeadCapture from "@/components/marketing/LeadCapture";
 import FinalCTA from "@/components/marketing/FinalCTA";
+import { ScrollToForm } from "@/components/marketing/ScrollToForm";
 
 export default function HomePage() {
   return (
     <main>
+      <Suspense fallback={null}>
+        <ScrollToForm />
+      </Suspense>
       <HeroSection />
       <TrustStrip />
       <ProblemSolution />
