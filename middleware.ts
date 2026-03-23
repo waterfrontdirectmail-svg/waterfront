@@ -16,7 +16,6 @@ function isPublic(pathname: string): boolean {
   if (pathname.startsWith("/api/public/")) return true;
   if (pathname.startsWith("/go/")) return true;
   if (pathname.startsWith("/api/auth/")) return true;
-  // Static assets
   if (pathname.startsWith("/_next/") || pathname.startsWith("/favicon")) return true;
   return false;
 }
@@ -24,13 +23,13 @@ function isPublic(pathname: string): boolean {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Always refresh session
-  const { user, response, supabase } = await updateSession(request);
-
-  // Public routes — no auth required
+  // Public routes — skip Supabase entirely, no auth needed
   if (isPublic(pathname)) {
-    return response;
+    return NextResponse.next();
   }
+
+  // Protected routes — need Supabase session
+  const { user, response, supabase } = await updateSession(request);
 
   // Protected: /dashboard/*
   if (pathname.startsWith("/dashboard")) {
@@ -52,7 +51,6 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(url);
     }
 
-    // Check admin role
     const { data: profile } = await supabase
       .from("profiles")
       .select("role")
