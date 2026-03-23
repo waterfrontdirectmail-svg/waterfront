@@ -40,12 +40,11 @@ const SiteFooter = () => (
           </div>
         ))}
 
-        {/* Contact */}
         <div>
           <h4 className="font-serif text-sm font-bold mb-4 text-brass-gold">Contact</h4>
           <ul className="space-y-2.5 text-sm text-deep-navy-foreground/70">
-            <li>(561) 555-1234</li>
-            <li>info@waterfrontdirectmail.com</li>
+            <li><a href="tel:5612478632" className="hover:text-brass-gold transition-colors">(561) 247-8632</a></li>
+            <li><a href="mailto:sales@waterfrontdirectmail.com" className="hover:text-brass-gold transition-colors">sales@waterfrontdirectmail.com</a></li>
             <li className="pt-2 text-xs">Serving Palm Beach &amp; Broward County, FL</li>
           </ul>
         </div>

@@ -8,13 +8,13 @@ const UtilityBar = () => (
         <span>Serving Palm Beach &amp; Broward Counties</span>
       </div>
       <div className="hidden sm:flex items-center gap-4">
-        <a href="tel:5615551234" className="flex items-center gap-1.5 hover:text-brass-gold transition-colors">
+        <a href="tel:5612478632" className="flex items-center gap-1.5 hover:text-brass-gold transition-colors">
           <Phone className="w-3 h-3" />
-          <span>(561) 555-1234</span>
+          <span>(561) 247-8632</span>
         </a>
-        <a href="mailto:info@waterfrontdirectmail.com" className="flex items-center gap-1.5 hover:text-brass-gold transition-colors">
+        <a href="mailto:sales@waterfrontdirectmail.com" className="flex items-center gap-1.5 hover:text-brass-gold transition-colors">
           <Mail className="w-3 h-3" />
-          <span>info@waterfrontdirectmail.com</span>
+          <span>sales@waterfrontdirectmail.com</span>
         </a>
         <span className="text-brass-gold font-medium">Free Campaign Consultation</span>
       </div>
